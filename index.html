@@ -4,8 +4,8 @@
 
 <title>Hangman Homework</title>
 
-<link rel="stylesheet" type="text/css" href="style3.css" />
-<script type="text/javascript" src="game3.js"></script>
+<link rel="stylesheet" type="text/css" href="hangman-game/assets/css/style.css" />
+<script type="text/javascript" src="hangman-game/assets/javascript/game.js"></script>
 
 </head>
 	
@@ -32,8 +32,11 @@
 
 		<input name="check" type="button" value="Guess" onClick="checkWord()">
 	
-		<p id="generateLetter">Wrong Guesses:</p>
-		<p idone="outputGuessNumber">You Have This Many Guesses Left:</p>
+		<p id="generateLetter">The Incorrect Guesses Are:</p>
+
+		<p>You Have This Many Guesses Left: <div id="outputGuessNumber">
+		</div>
+		</p>
 
 		<input name="refresh" type="button" value="New Game" onClick="location.reload()">
 
@@ -41,14 +44,14 @@
 
 	</div> <!--close container info-->
 
-	<div id="pictureinfo">
+	<embed id="pictureinfo">
 	<!--<div class="youtube" id="LcIytqkbdlo" style="width:560px; height: 315px;">
     </div>
 
     <div class="youtube" id="_Jmisv1Spck" style="width:560px; height: 315px;">
    </div>-->
 
-	<img src="blacksabbath.jpg">
+	<img src="hangman-game/assets/images/blacksabbath.jpg">
   	</div>
   	
 <body>

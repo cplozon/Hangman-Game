@@ -18,7 +18,7 @@ var random = Math.floor((Math.random()*(bandName.length-1)));
 
 var miscBandName = bandName[random]; 						// random band name from above array
 var bandNameLength = new Array(miscBandName.length);   		// creating the length of each band name for counting purposes
-var guessNumber = 0;										// total number of guesses before the user does not win
+var guessLeft = 6;										// total number of guesses before the user does not win
 
 														
 
@@ -26,6 +26,13 @@ for (var i = 0; i < bandNameLength.length; i++){		//for loop counting each chara
 	bandNameLength[i] = "_ ";
 }
 
+function numberDisplay(guessesLeft){						// function that displays guesses left and writes to screen
+
+		var outputGuessNumber = document.getElementById("outputGuessNumber");
+
+		outputGuessNumber.innerHTML = guessesLeft;
+
+	}
 
 
 function printbandNameLength(){
@@ -75,11 +82,9 @@ var checkWord = function(){
 		var letter = document.createTextNode(" " + userInput);				// of tries up by one
 		
 		generateLetter.appendChild(letter); 
-		guessNumber++;
-		alert("You have " + (6 - guessNumber));
-		
-		var outputGuessNumber = document.createTextNode(" " + guessNumber);
-		var hangman = document.getElementById("hangman");
+		guessLeft--;
+
+		numberDisplay(guessLeft)
 	}
 	
 	
@@ -98,9 +103,9 @@ var checkWord = function(){
 	}
 	
 	
-	if(guessNumber === 6){											// once you guess wrong 6 times, the game is over
+	if(guessLeft === 0){											// once you guess wrong 6 times, the game is over
 		alert("Game Over - You Lost");
-
+		guessLeft = 6;
 	}
 }
 
@@ -148,6 +153,7 @@ var checkWord = function(){
 
 function init(){
 	printbandNameLength();
+	numberDisplay(guessLeft);
 }
 
 window.onload = init;
