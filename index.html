@@ -4,8 +4,13 @@
 
 <title>Hangman Homework</title>
 
-<link rel="stylesheet" type="text/css" href="hangman-game/assets/css/style.css" />
-<script type="text/javascript" src="hangman-game/assets/javascript/game.js"></script>
+<!-- avoid using fixed paths, this probably worked fine on your computer, but
+ when I pulled it down the css and js didn't load because the paths were
+ different on my machine. Here the "." is saying the current directory
+ and we navigate out from there. Search "html fixed vs relative paths"
+ for more info in that -->
+<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+<script type="text/javascript" src="./assets/javascript/game.js"></script>
 
 </head>
 	
@@ -51,7 +56,8 @@
     <div class="youtube" id="_Jmisv1Spck" style="width:560px; height: 315px;">
    </div>-->
 
-	<img src="hangman-game/assets/images/blacksabbath.jpg">
+   <!-- same comment as above about relative paths -->
+	<img src="./assets/images/blacksabbath.jpg">
   	</div>
   	
 <body>

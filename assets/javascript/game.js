@@ -1,7 +1,6 @@
-
-
+// nitpicky comment (sorry!) - you can remove alot of these excess blank lines to tidy
+// up your code
 var bandName = 
-
 	[
 	["A", "C", "D", "C"],									//AC/DC
 	["L","E","D","Z","E","P","P","E","L","I","N"],			//Led Zeppelin
@@ -12,10 +11,7 @@ var bandName =
 	["A","E","R","O","S","M","I","T","H"]					//Aerosmith
 				]
 
-
-
 var random = Math.floor((Math.random()*(bandName.length-1))); 
-
 var miscBandName = bandName[random]; 						// random band name from above array
 var bandNameLength = new Array(miscBandName.length);   		// creating the length of each band name for counting purposes
 var guessLeft = 6;										// total number of guesses before the user does not win
@@ -51,21 +47,24 @@ var checkWord = function(){
 														// one character input by user
 	userInput = userInput.toUpperCase();				// changes any character to uppercase
 
-		if (userInput=='A' || userInput=='B' || userInput=='C' || userInput=='D' || userInput=='E' || userInput=='F' ||
-			userInput=='G' || userInput=='H' || userInput=='I' || userInput=='J' || userInput=='K' || userInput=='L' ||
-			userInput=='M' || userInput=='N' || userInput=='O' || userInput=='P' || userInput=='Q' || userInput=='R' ||
-			userInput=='S' || userInput=='T' || userInput=='U' || userInput=='V' || userInput=='W' || userInput=='X' ||
-			userInput=='Y' || userInput=='Z'){
-			
-		
-		for (var i = 0; i < miscBandName.length; i++){			// using an if else loop to make sure the user is putting in a character
-			if(miscBandName[i] === userInput){
-			bandNameLength[i] = userInput + " ";
-			var valueTwo = true;
-			}
-				b.value = ""; }									// clears space for new character
-		}  
-		else { alert("Please Select A Character");}
+  // can clean up the formatting of this if/else statment
+  if (userInput=='A' || userInput=='B' || userInput=='C' || userInput=='D' || userInput=='E' || userInput=='F' ||
+    userInput=='G' || userInput=='H' || userInput=='I' || userInput=='J' || userInput=='K' || userInput=='L' ||
+    userInput=='M' || userInput=='N' || userInput=='O' || userInput=='P' || userInput=='Q' || userInput=='R' ||
+    userInput=='S' || userInput=='T' || userInput=='U' || userInput=='V' || userInput=='W' || userInput=='X' ||
+    userInput=='Y' || userInput=='Z'){
+    
+  
+    for (var i = 0; i < miscBandName.length; i++){			// using an if else loop to make sure the user is putting in a character
+      if(miscBandName[i] === userInput){
+        bandNameLength[i] = userInput + " ";
+        var valueTwo = true;
+      }
+      b.value = ""; 
+    }									// clears space for new character
+  } else { 
+    alert("Please Select A Character");
+  }
 	
 	
 	
@@ -73,7 +72,6 @@ var checkWord = function(){
 	id.innerHTML=""; 
 	printbandNameLength();
 
-	
 	
 	
 	if(!valueTwo){
@@ -96,11 +94,11 @@ var checkWord = function(){
 	}
 
 	if(valueThree) {
+    // cool feature with youtube!
+    // you can combine both of these in the same if statement
 		alert(location.href='https://www.youtube.com/watch?v=5s7_WbiR79E');
-	}
-	if(valueThree){														// if all letters have been found and guess is less than six, you win
 		alert("You Won!");
-	}
+  }
 	
 	
 	if(guessLeft === 0){											// once you guess wrong 6 times, the game is over
@@ -108,7 +106,7 @@ var checkWord = function(){
 		guessLeft = 6;
 	}
 }
-
+// love the idea of a video popping up! this would be really cool!
 	//var videos = document.getElementsByClassName("youtube"); 
 
 	//for (var j=0; j<videos.length; j++) {
